@@ -1,4 +1,5 @@
 import { BsDot } from "react-icons/bs";
+import { FaPlusCircle } from "react-icons/fa";
 
 const RecentJobs = () => {
   const jobListings = [
@@ -117,42 +118,53 @@ const RecentJobs = () => {
       <h1 className="text-3xl pb-4 xl:pb-10 sm:text-4xl md:w-[600px] font-bold">
         Recent Jobs
       </h1>
-      <div>
+      <div className="flex gap-8">
         <div className="w-full flex flex-col gap-4">
           {jobListings.map((job, index) => (
             <div className="flex md:flex-row md:px-4 md:items-center md:justify-between md:w-full gap-3 hover:bg-gray-50 cursor-pointer flex-col items-center border-[1px] border-gray-300 py-8 rounded-2xl">
-            <div className="flex flex-col items-center md:flex-row">
-              <div className="h-16 rounded-full border-[1px] border-gray-300 w-16">
-                <img
-                  src={job.logo}
-                  alt="logo"
-                  className="object-cover"
-                />
+              <div className="flex flex-col items-center md:flex-row">
+                <div className="h-16 rounded-full border-[1px] border-gray-300 w-16">
+                  <img src={job.logo} alt="logo" className="object-cover" />
+                </div>
+                <div className="flex flex-col items-center md:items-start md:pl-4">
+                  <p className="text-gray-500 text-[16px] font-semibold flex items-center">
+                    {job.company} <BsDot className="text-xl" /> {job.jobType}
+                  </p>
+                  <h2 className="text-xl font-semibold text-center md:text-start px-4 md:px-0 md:text-2xl">
+                    {job.position}
+                  </h2>
+                </div>
               </div>
-              <div className="flex flex-col items-center md:items-start md:pl-4">
-                <p className="text-gray-500 text-[16px] font-semibold flex items-center">
-                  {job.company} <BsDot className="text-xl" /> {job.jobType}
-                </p>
-                <h2 className="text-xl font-semibold text-center md:text-start px-4 md:px-0 md:text-2xl">
-                  {job.position}
-                </h2>
+              <div className="w-full md:w-fit gap-2 md:items-end flex flex-col items-center">
+                <div className="text-[12px] text-[#0057ff] bg-[#e6ecfd] px-3 rounded-[15px] border-[1px] border-[#a7c2f6] font-semibold w-fit">
+                  {job.date}
+                </div>
+                <div className="flex gap-2">
+                  <p className="text-[12px] text-[#28a359] bg-[#f6f2f3] px-3 rounded-[15px] border-[1px] border-[#28a359] font-semibold w-fit">
+                    {job.location}
+                  </p>
+                  {job.remote === true && (
+                    <p className="text-[12px] text-[#28a359] bg-[#f6f2f3] px-3 rounded-[15px] border-[1px] border-[#28a359] font-semibold w-fit">
+                      Remote
+                    </p>
+                  )}
+                </div>
               </div>
             </div>
-            <div className="w-full md:w-fit gap-2 md:items-end flex flex-col items-center">
-              <div className="text-[12px] text-[#0057ff] bg-[#e6ecfd] px-3 rounded-[15px] border-[1px] border-[#a7c2f6] font-semibold w-fit">
-                {job.date}
-              </div>
-              <div className="flex gap-2">
-                <p className="text-[12px] text-[#28a359] bg-[#f6f2f3] px-3 rounded-[15px] border-[1px] border-[#28a359] font-semibold w-fit">
-                  {job.location}
-                </p>
-                {job.remote === true && <p className="text-[12px] text-[#28a359] bg-[#f6f2f3] px-3 rounded-[15px] border-[1px] border-[#28a359] font-semibold w-fit">
-                  Remote
-                </p>}
-              </div>
-            </div>
-          </div>
           ))}
+          <button className="text-sm self-center mt-10 w-fit hover:cursor-pointer px-6 md:flex md:items-center md:py-3 md:gap-2 py-3 text-black rounded-full font-semibold border-black border-[1px]">
+          Browse all jobs
+        </button>
+        </div>
+        <div className="hidden sticky top-[6rem] lg:flex w-[350px] px-6 py-8 flex-col gap-16 border-[1px] border-gray-300 h-fit rounded-2xl">
+          <p className="font-semibold">
+            Work with the most talented and accomplished developers on a
+            freelance, contract, part-time, or full-time basis.
+          </p>
+          <button className="text-sm w-fit hover:cursor-pointer border-none px-4 md:flex md:items-center md:py-2 md:gap-2 py-1 bg-[#0057FF] text-white rounded-full font-semibold">
+            <FaPlusCircle className="hidden md:block" />
+            Post a job
+          </button>
         </div>
       </div>
     </div>
