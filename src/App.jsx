@@ -1,4 +1,5 @@
 import FeaturedJobs from "./components/FeaturedJobs";
+import Footer from "./components/Footer";
 import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
 import RecentJobs from "./components/RecentJobs";
@@ -13,6 +14,7 @@ function App() {
           <FeaturedJobs/>
           <RecentJobs/>
         </div>
+        <Footer/>
       </div>
     </>
   );
