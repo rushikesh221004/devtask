@@ -1,8 +1,13 @@
 import React from 'react'
+import FindDreamJob from '../components/FindDreamJob'
 
 const Jobs = () => {
   return (
-    <div>Jobs</div>
+    <div className="min-h-screen pb-20 w-full">
+        <div className="xl:max-w-[1250px] flex flex-col items-center mx-auto">
+            <FindDreamJob/>
+        </div>
+    </div>
   )
 }
 
