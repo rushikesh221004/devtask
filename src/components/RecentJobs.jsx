@@ -115,18 +115,18 @@ const RecentJobs = () => {
     },
   ];
   return (
-    <div className="w-[90%] mt-20">
+    <div className="w-[94%] my-10">
       <h1 className="text-3xl pb-4 xl:pb-10 sm:text-4xl md:w-[600px] font-bold">
-        Recent Jobs
+        All Jobs
       </h1>
       <div className="flex gap-8">
         <div className="w-full flex flex-col gap-4">
           {jobListings.map((job, index) => (
             <div
               key={index}
-              className="flex md:flex-row md:px-4 md:items-center md:justify-between md:w-full gap-3 hover:bg-gray-50 cursor-pointer flex-col items-center border-[1px] border-gray-300 py-8 rounded-2xl"
+              className="flex md:flex-row md:px-4 md:items-center md:justify-between md:w-full gap-6 hover:bg-gray-50 cursor-pointer flex-col items-center border-[1px] border-gray-300 py-8 rounded-2xl"
             >
-              <div className="flex flex-col items-center md:flex-row">
+              <div className="flex gap-4 flex-col items-center md:flex-row">
                 <div className="h-16 rounded-full border-[1px] border-gray-300 w-16">
                   <img src={job.logo} alt="logo" className="object-cover" />
                 </div>
@@ -139,12 +139,12 @@ const RecentJobs = () => {
                   </h2>
                 </div>
               </div>
-              <div className="w-full md:w-fit gap-2 md:items-end flex flex-col items-center">
+              <div className="w-full md:w-fit gap-3 md:items-end flex flex-col items-center">
                 <div className="text-[12px] text-[#0057ff] bg-[#e6ecfd] px-3 rounded-[15px] border-[1px] border-[#a7c2f6] font-semibold w-fit">
                   {job.date}
                 </div>
                 <div className="flex gap-2">
-                  <p className="text-[12px] text-[#28a359] bg-[#f6f2f3] px-3 rounded-[15px] border-[1px] border-[#28a359] font-semibold w-fit">
+                  <p className="text-[12px] text-[#28a359] bg-[#f6f2f3] px-3 whitespace-nowrap rounded-[15px] border-[1px] border-[#28a359] font-semibold w-fit">
                     {job.location}
                   </p>
                   {job.remote === true && (
