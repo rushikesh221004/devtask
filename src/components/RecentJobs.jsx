@@ -1,5 +1,6 @@
 import { BsDot } from "react-icons/bs";
 import { FaPlusCircle } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const RecentJobs = () => {
   const jobListings = [
@@ -121,7 +122,10 @@ const RecentJobs = () => {
       <div className="flex gap-8">
         <div className="w-full flex flex-col gap-4">
           {jobListings.map((job, index) => (
-            <div className="flex md:flex-row md:px-4 md:items-center md:justify-between md:w-full gap-3 hover:bg-gray-50 cursor-pointer flex-col items-center border-[1px] border-gray-300 py-8 rounded-2xl">
+            <div
+              key={index}
+              className="flex md:flex-row md:px-4 md:items-center md:justify-between md:w-full gap-3 hover:bg-gray-50 cursor-pointer flex-col items-center border-[1px] border-gray-300 py-8 rounded-2xl"
+            >
               <div className="flex flex-col items-center md:flex-row">
                 <div className="h-16 rounded-full border-[1px] border-gray-300 w-16">
                   <img src={job.logo} alt="logo" className="object-cover" />
@@ -152,9 +156,11 @@ const RecentJobs = () => {
               </div>
             </div>
           ))}
-          <button className="text-sm self-center mt-10 w-fit hover:cursor-pointer px-6 md:flex md:items-center md:py-3 md:gap-2 py-3 text-black rounded-full font-semibold border-black border-[1px]">
-          Browse all jobs
-        </button>
+          <Link to="/jobs" className="flex justify-center">
+            <button className="text-sm self-center mt-10 w-fit hover:cursor-pointer px-6 md:flex md:items-center md:py-3 md:gap-2 py-3 text-black rounded-full font-semibold border-black border-[1px]">
+              Browse all jobs
+            </button>
+          </Link>
         </div>
         <div className="hidden sticky top-[6rem] lg:flex w-[350px] px-6 py-8 flex-col gap-16 border-[1px] border-gray-300 h-fit rounded-2xl">
           <p className="font-semibold">

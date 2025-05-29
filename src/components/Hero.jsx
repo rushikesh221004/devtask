@@ -38,6 +38,7 @@ const Hero = () => {
         <div className="w-full lg:flex-row flex flex-col gap-4 text-white">
           {testimonials.map((testimonial, index) => (
             <div
+            key={index}
               className={` flex flex-col lg:w-[50%] gap-6 md:gap-10 px-6 py-6 xl:px-12 xl:py-14 rounded-2xl ${
                 index === 1 ? "bg-[#13544E]" : "bg-[#133654]"
               }`}
