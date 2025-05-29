@@ -121,7 +121,7 @@ const RecentJobs = () => {
       <div className="flex gap-8">
         <div className="w-full flex flex-col gap-4">
           {jobListings.map((job, index) => (
-            <div className="flex md:flex-row md:px-4 md:items-center md:justify-between md:w-full gap-3 hover:bg-gray-50 cursor-pointer flex-col items-center border-[1px] border-gray-300 py-8 rounded-2xl">
+            <div key={index} className="flex md:flex-row md:px-4 md:items-center md:justify-between md:w-full gap-3 hover:bg-gray-50 cursor-pointer flex-col items-center border-[1px] border-gray-300 py-8 rounded-2xl">
               <div className="flex flex-col items-center md:flex-row">
                 <div className="h-16 rounded-full border-[1px] border-gray-300 w-16">
                   <img src={job.logo} alt="logo" className="object-cover" />
