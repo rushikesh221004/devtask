@@ -1,6 +1,8 @@
+
 import FeaturedJobs from "../components/FeaturedJobs"
 import Hero from "../components/Hero"
 import RecentJobs from "../components/RecentJobs"
+
 
 const Home = () => {
   return (
