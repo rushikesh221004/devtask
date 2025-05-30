@@ -1,5 +1,6 @@
 import { BsDot } from "react-icons/bs";
 import { FaPlusCircle } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const AllJobs = () => {
   const jobListings = [
@@ -161,10 +162,12 @@ const AllJobs = () => {
             Work with the most talented and accomplished developers on a
             freelance, contract, part-time, or full-time basis.
           </p>
-          <button className="text-sm w-fit hover:cursor-pointer border-none px-4 md:flex md:items-center md:py-2 md:gap-2 py-1 bg-[#0057FF] text-white rounded-full font-semibold">
-            <FaPlusCircle className="hidden md:block" />
-            Post a job
-          </button>
+          <Link to="/post-a-job">
+            <button className="text-sm w-fit hover:cursor-pointer border-none px-4 md:flex md:items-center md:py-2 md:gap-2 py-1 bg-[#0057FF] text-white rounded-full font-semibold">
+              <FaPlusCircle className="hidden md:block" />
+              Post a job
+            </button>
+          </Link>
         </div>
       </div>
     </div>
